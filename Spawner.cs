@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
         newCube.Initialize(chance, scale);
 
         newCube.OnClicked += ChangeParameters;
+        
         return newCube;
     }
 

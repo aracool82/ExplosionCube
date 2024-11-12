@@ -15,8 +15,14 @@ public class Cube : MonoBehaviour
         ChanceSplit = chance;
         transform.localScale = scale;
 
-        GetComponent<Renderer>().material.color = Random.ColorHSV();
         Rigidbody = GetComponent<Rigidbody>();
+        
+        GetComponent<Renderer>().material.color = GetRandomColor();
+    }
+
+    private Color GetRandomColor()
+    {
+        return Random.ColorHSV();
     }
 
     private void OnMouseDown()
@@ -35,6 +41,7 @@ public class Cube : MonoBehaviour
     private int GetChance()
     {
         int multiplier = 100;
+        
         return (int)(Random.value * multiplier);
     }
 }
